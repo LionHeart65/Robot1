@@ -1,11 +1,12 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.Autonomous;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 @Autonomous(name = "Auto Observation Zone Park")
-public class AutoOZPark extends LinearOpMode {
+public class autoOneNetPark extends LinearOpMode{
+
     private DcMotor frontLeft;
     private DcMotor backLeft;
     private DcMotor frontRight;
@@ -36,6 +37,17 @@ public class AutoOZPark extends LinearOpMode {
                 telemetry.addData("Front Right Power", frontRight.getPower());
                 telemetry.addData("Back Right Power", backRight.getPower());
                 telemetry.update();
+                sleep(5000);
+                frontLeft.setPower(-0.5);
+                backLeft.setPower(-0.5);
+                frontRight.setPower(0.5);
+                backRight.setPower(0.5);
+                telemetry.addData("Front Left Power:", frontLeft.getPower());
+                telemetry.addData("Back Left Power", backLeft.getPower());
+                telemetry.addData("Front Right Power", frontRight.getPower());
+                telemetry.addData("Back Right Power", backRight.getPower());
+                telemetry.update();
+
             }
         }
     }
