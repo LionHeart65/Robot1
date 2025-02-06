@@ -8,7 +8,7 @@ import org.firstinspires.ftc.teamcode.Utils.Robot;
 @TeleOp(name = "BasicTankDrive (Blocks to Java)")
 public class BasicTankDrive extends LinearOpMode{
 
-    Robot robot = new Robot(hardwareMap);
+    Robot robot = new Robot(hardwareMap, telemetry);
 
     /**
      * This function is executed when this Op Mode is selected.
@@ -21,7 +21,8 @@ public class BasicTankDrive extends LinearOpMode{
         if (opModeIsActive()) {
             while (opModeIsActive()) {
                 // Put loop blocks here
-                robot.setMotors(telemetry, gamepad1.left_stick_y, gamepad1.left_stick_y, -gamepad1.right_stick_y, -gamepad1.right_stick_y);
+                robot.tankDrive(gamepad1.left_stick_y, gamepad1.right_stick_y);
+                telemetry.addLine("wefewfew");
 
             }
         }

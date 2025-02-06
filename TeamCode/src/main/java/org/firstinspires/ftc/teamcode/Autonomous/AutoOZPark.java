@@ -15,14 +15,16 @@ public class AutoOZPark extends LinearOpMode {
      */
 
     // JUST WORK ALREADY
-    Robot robot = new Robot(hardwareMap);
+    // YAY you work
+    Robot robot = new Robot(hardwareMap, telemetry);
     @Override
     public void runOpMode() {
         // Put initialization blocks here.
         waitForStart();
         if (opModeIsActive()) {
             while (opModeIsActive()) {
-                robot.setMotors(telemetry, 0.5, 0.5, -0.5, -0.5);
+                robot.tankDrive(0.5, 0.5);
+                telemetry.addLine("wefewfew");
             }
         }
     }
